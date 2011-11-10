@@ -1,0 +1,6 @@
+libvlc.vcproj.*.user
+vc-libvlc.suo
+vc-libvlc.ncb
+debug/*
+release/*
+lib/*

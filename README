@@ -1,0 +1,3 @@
+Before running, add path to libvlc.dll to PATH system variable.
+Then corresponding project from Build\ can be used,
+or MakeLibVlcLib.bat executed via "Visual Studio Command Prompt".
