@@ -6,6 +6,8 @@ for %%i in (libvlc.dll) do set LIBVLC_DLL="%%~$PATH:i"
 if not exist %LIBVLC_DLL% (
   echo libvlc.dll not found in PATH
   exit /b 1
+) else (
+  echo Found %LIBVLC_DLL%.
 )
 
 set DEF_FILE="%THIS_BAT_PATH%libvlc.def"
