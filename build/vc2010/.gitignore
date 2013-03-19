@@ -1,0 +1,6 @@
+libvlc.vcxproj.user
+vc-libvlc.suo
+vc-libvlc.sdf
+vc-libvlc.opensdf
+release/*
+lib/*
