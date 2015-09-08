@@ -15,8 +15,10 @@ set DUMP_FILE="%THIS_BAT_PATH%libvlc.dump"
 
 if "%~1"=="" (
   set LIB_FILE="%THIS_BAT_PATH%libvlc.lib"
+  set X64_LIB_FILE="%THIS_BAT_PATH%libvlc.x64.lib"
 ) else (
-  set LIB_FILE="%~1"
+  set LIB_FILE="%~1libvlc.lib"
+  set X64_LIB_FILE="%~1libvlc.x64.lib"
 )
 
 echo EXPORTS > %DEF_FILE%
@@ -25,5 +27,6 @@ dumpbin /exports /out:%DUMP_FILE% %LIBVLC_DLL%
 
 for /f "usebackq tokens=4,* delims=_ " %%i in (%DUMP_FILE%) do if %%i==libvlc echo %%i_%%j >> %DEF_FILE%
 lib /NOLOGO /def:%DEF_FILE% /out:%LIB_FILE% /machine:x86
+lib /NOLOGO /def:%DEF_FILE% /out:%X64_LIB_FILE% /machine:x64
 del %DUMP_FILE% /f
 del %DEF_FILE% /f
